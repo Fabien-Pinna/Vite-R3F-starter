@@ -21,3 +21,5 @@ It displays a cube
     - eslint-plugin-react-hooks,
     - eslint-plugin-react-refresh,
     - vite
+![Alt text](./image.png)
+
