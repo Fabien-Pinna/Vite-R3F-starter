@@ -1,29 +1,16 @@
-import { useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Box, OrbitControls } from "@react-three/drei";
-
-const Scene = () => {
-  const boxRef = useRef();
-
-  useFrame((state, delta) => {
-    boxRef.current.rotation.y += 0.01;
-  });
-
-  return (
-    <>
-      <Box ref={boxRef} args={[1, 1, 1]} rotation={[0.5, 0, 0]}>
-        <meshNormalMaterial />
-      </Box>
-      <ambientLight />
-    </>
-  );
-};
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import { Experience } from "./components/Experience";
+import "./App.css";
 
 const App = () => {
   return (
-    <Canvas camera={{ fov: 70, position: [0, 0, 3] }}>
+    <Canvas camera={{
+      fov: 70,
+      position: [0, 0, 3]
+    }}>
       <OrbitControls />
-      <Scene />
+      <Experience />
     </Canvas>
   );
 };
